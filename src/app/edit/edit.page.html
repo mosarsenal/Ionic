@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-title><ion-icon name="create"></ion-icon>แก้ไขข้อมุูล</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngFor="let item of dataList"color="primary">
+  
+  <form novalidate #myForm="ngForm" (ngSubmit)="edit(myForm.value)">
+  <div padding-horizontal>
+    <ion-item>
+      <ion-label position="stacked">
+        <h1>ชื่อ</h1>
+      </ion-label>
+      <ion-input type="text" ngModel name="stud_name" [(ngModel)]="item.stud_name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">
+        <h1>สถานะ</h1>
+      </ion-label>
+      <ion-input type="text" ngModel name="stud_status" [(ngModel)]="item.stud_status"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">
+        <h1>อายุ</h1>
+      </ion-label>
+      <ion-input type="text" ngModel name="stud_age" [(ngModel)]="item.stud_age"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">
+        <h1>สถานศึกษา</h1>
+      </ion-label>
+      <ion-input type="text" ngModel name="stud_school" [(ngModel)]="item.stud_school"></ion-input>
+    </ion-item>
+  </div>
+
+  
+
+  <div padding-horizontal>
+    <ion-button shape="round"  size="small" type="submit" >บันทึก</ion-button>
+  </div>
+</form>
+</ion-content>
